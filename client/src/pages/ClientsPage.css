@@ -1,0 +1,63 @@
+/* client/src/pages/ClientsPage.css */
+
+.clients-page-container {
+  padding: 2rem;
+}
+
+.clients-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.clients-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.new-client-btn {
+  background-color: #46484c;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.new-client-btn:hover {
+  background-color: rgb(99, 97, 98);
+}
+
+/* Table Styling */
+.clients-table-container {
+  overflow-x: auto;
+}
+
+.clients-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.clients-table-container th,
+.clients-table-container td {
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid #2d2e32;
+}
+
+.clients-table-container th {
+  font-size: 0.875rem;
+  color: #a0a0a0;
+  text-transform: uppercase;
+}
+
+.clients-table-container td {
+  font-size: 1rem;
+}
+
+.clients-table-container tbody tr:hover {
+  background-color: #1a1a1a;
+}

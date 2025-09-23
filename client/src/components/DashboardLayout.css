@@ -1,0 +1,72 @@
+/* client/src/components/DashboardLayout.css */
+
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #0d0d0e; /* Dark background color */
+  color: white;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 200px;
+  background-color: #0d0e10; /* A darker shade for the sidebar */
+  padding: 0;
+  display: flex;
+  margin-left: 15px;
+  flex-direction: column;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo-dashboard {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(182, 182, 182);
+  margin-bottom: 3rem;
+  margin-top: 6.5rem;
+  text-transform: uppercase;
+   margin-left: 1.5rem;
+  
+   text-decoration: underline;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.sidebar-nav a {
+  color: #a0a0a0; /* Light gray text for links */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+  color: #46484c; /* Pink hover effect */
+}
+
+/* Main Content Area */
+.main-content-area {
+  flex-grow: 1; /* Allows the main content to take up the remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-main {
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+/* Hide sidebar on mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -280px;
+    transition: left 0.3s ease;
+    z-index: 100;
+  }
+}

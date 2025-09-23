@@ -1,0 +1,163 @@
+/* client/src/pages/BrowsePage.css */
+
+.browse-section {
+  padding: 6rem 1.5rem;
+  background-color: #000000;
+  min-height: 100vh;
+}
+
+.browse-container {
+  max-width: 90rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.browse-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+/* client/src/pages/BrowsePage.css */
+
+.freelancer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    /* Use minmax to ensure rows are at least as tall as their content but can grow. */
+    grid-auto-rows: minmax(min-content, max-content);
+}
+
+.freelancer-card {
+    background-color: #1E1F22;
+    position: relative;
+   
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    padding: 0; /* Remove padding here to make the image fill the card */
+    display: flex; /* Use flexbox to make sure content fills the card */
+    flex-direction: column;
+}
+.freelancer-card:hover{
+    transform: translateY(-5px);
+}
+.card-image-container {
+    width: 100%;
+    /* Let the height be determined by the image. */
+    height: auto;
+    border-radius: 0; /* Remove radius to allow the image to fill the card's rounded corners */
+    overflow: hidden;
+    /* Use flex-grow to make the image container fill available space */
+    flex-grow: 1;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover is the key to making the image fill the container without distortion. */
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease-in-out;
+}
+
+/* Optional: Make the image color on hover for a nice effect */
+.freelancer-card:hover .card-image {
+  filter: grayscale(0%);
+
+  transition: filter 0.5s ease-in-out; /* Add a smooth transition */
+}
+.freelancer-card:hover .card-content-overlay {
+  /* Show the content by moving it up and making it opaque */
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card-content {
+  position: absolute; /* Add this line */
+  bottom: 0; /* Positions the content at the bottom of the card */
+  left: 0; /* Aligns content to the left side */
+  width: 100%; /* Ensures the content spans the full width of the card */
+  background-color: rgba(0, 0, 0, 0.7); 
+   color: rgb(255, 255, 255);
+  padding: 10px;
+}
+.card-name {
+  color: rgb(255, 255, 255);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.card-specialty {
+  color: #a0a0a0;
+  font-size: 0.875rem;
+}
+
+/* New classes to control card height */
+.card-small {
+  grid-row-end: span 14;
+
+}
+.card-medium {
+  grid-row-end: span 16;
+}
+.card-large {
+  
+  grid-row-end: span 19;
+}
+.card-tall {
+  grid-row-end: span 21;
+}
+.card-short {
+  grid-row-end: span 14;
+}
+/* client/src/pages/BrowsePage.css */
+
+/* ... (existing styles) ... */
+
+/* New styles for the filter and search bar */
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .filter-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.search-input,
+.specialty-select {
+  padding: 0.75rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid #4B5563;
+  background-color: #1a1a1a;
+  color: white;
+  font-size: 1rem;
+}
+
+.search-input::placeholder,
+.specialty-select option {
+  color: #a0a0a0;
+}
+
+.search-input:focus,
+.specialty-select:focus {
+  outline: none;
+  border-color: #515151; /* Pink focus color */
+}
+
+.no-results {
+  grid-column: 1 / -1; /* Make the text span all columns */
+  text-align: center;
+  color: #a0a0a0;
+  font-size: 1.25rem;
+  margin-top: 2rem;
+}

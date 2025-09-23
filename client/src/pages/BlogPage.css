@@ -1,0 +1,153 @@
+/* client/src/pages/BlogPage.css */
+
+/* --- Blog Hero Section --- */
+.blog-hero-section {
+  position: relative;
+  background-size: 100%; /* Image takes up 50% of the width */
+  background-repeat: no-repeat;
+  background-position: right center; /* Image is on the right side */
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #ffffff; /* Dark background on the left side */
+  color: white;
+}
+
+.blog-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; /* No overlay on the image part */
+}
+
+.blog-hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.blog-hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.blog-hero-subtitle {
+  font-size: 1.25rem;
+  color: #d1d5db;
+}
+
+/* --- Blog Post Grid Section --- */
+.blog-grid-section {
+  background-color: #000000; /* Matches your current theme */
+  padding: 6rem 1.5rem;
+  min-height: 40vh;
+}
+
+.blog-container {
+  max-width: 90rem;
+  margin: 0 auto;
+
+}
+
+.blog-post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  grid-auto-rows: 20px;
+  
+}
+
+.blog-post-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  background-color:#110d0f;
+  
+}
+
+.blog-post-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-post-image {
+  position: absolute;
+  top: 0;
+  
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.blog-post-card:hover .blog-post-image {
+  filter: grayscale(0%);
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.blog-card-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Initial State: The overlay is now visible by default */
+  background-color: rgba(0, 0, 0, 0.297); /* A semi-transparent black background */
+  opacity: 1; /* Fully opaque */
+  
+  padding: 1rem;
+  box-sizing: border-box;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  
+  /* Add a transition for a smooth hover effect */
+  transition: background-color 0.3s ease-out;
+}
+
+/* On hover, you can add a subtle change, like a darker background */
+.blog-post-card:hover .blog-card-content {
+  /* background-color: rgba(0, 0, 0, 0.552); Makes the overlay a bit darker on hover */
+filter: grayscale(0);
+}
+
+.post-category {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.post-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+  line-height: 1.3;
+  color: white;
+}
+
+/* Sizing classes for the grid. Must be unique to the blog page. */
+.blog-card-short {
+  grid-row-end: span 8;
+}
+.blog-card-medium {
+  grid-row-end: span 10;
+}
+.blog-card-large {
+  grid-row-end: span 18;
+}
+.blog-card-tall {
+  grid-row-end: span 18;
+}

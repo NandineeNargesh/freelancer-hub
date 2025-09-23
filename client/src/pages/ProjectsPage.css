@@ -1,0 +1,92 @@
+/* client/src/pages/PortfolioPage.css */
+
+/* Hero Section */
+.portfolio-hero-section {
+  background-color: #131417; /* Dark background */
+  min-height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.portfolio-hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-hero-subtitle {
+  font-size: 1.25rem;
+  color: #a0a0a0;
+}
+
+/* Masonry Grid Section */
+.portfolio-grid-section {
+  padding: 2rem;
+  background-color: #000;
+}
+
+.masonry-grid-container {
+  /* This is the core of the masonry layout */
+  columns: 20rem 3; /* Creates 3 columns that are at least 20rem wide */
+  column-gap: 1.5rem;
+  max-width: 120rem; /* Wide container */
+  margin: 0 auto;
+}
+
+.masonry-item {
+  position: relative;
+  overflow: hidden;
+  break-inside: avoid; /* Prevents items from being split between columns */
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.masonry-item:hover {
+  transform: translateY(-5px);
+}
+
+.masonry-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.masonry-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.masonry-item:hover .masonry-overlay {
+  opacity: 1;
+}
+
+.masonry-category {
+  font-size: 0.875rem;
+  color: #46484c;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.masonry-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}

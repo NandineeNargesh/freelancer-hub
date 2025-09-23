@@ -1,0 +1,581 @@
+/* client/src/pages/HomePage.css */
+
+.hero-section {
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-size: cover;
+  background-position: center;
+  color: white;
+
+  
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.hero-title-1 {
+  font-size: 4.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #d1d5db;
+}
+
+.hero-title-2 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+.hero-subtitle {
+  margin-top: 1.5rem;
+  font-size: 1.125rem;
+  color: #e5e7eb;
+  max-width: 32rem;
+}
+
+.button-container {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* Updated primary button to gray theme */
+.btn-primary {
+  background-color: #46484c; /* gray-600 */
+  color: white;
+  border: 2px solid #373a3e; /* gray-600 */
+}
+
+.btn-primary:hover {
+  background-color: #383a3f; /* gray-500 */
+  border-color: #6B7280; /* gray-500 */
+}
+
+.btn-secondary {
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: black;
+}
+
+.features-section {
+  background-color: #000;
+  color: white;
+  padding: 6rem 1.5rem;
+}
+
+.features-content {
+  max-width: 90rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.features-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.title-underline {
+  width: 60px;
+  height: 4px;
+  background-color: #6B7280; /* gray-500 */
+  margin-bottom: 4rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 1 column on mobile */
+  gap: 3rem;
+}
+
+/* Use media queries for responsive columns */
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+  }
+}
+
+.feature-item h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+  color: #a0a0a0;
+  line-height: 1.6;
+}
+
+.process-section {
+  background-color: #000;
+  color: white;
+  padding: 6rem 1.5rem;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.one{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    background-color: #000000;
+}
+.two{
+    display: flex;
+     padding: 0;
+    margin: 0;
+    background-color: #000000;
+}/* Update these styles in your HomePage.css file */
+
+.process-card {
+  position: relative; /* This is key! It makes the card a reference point for the overlay */
+  overflow: hidden; /* This hides any part of the overlay that is off-screen */
+  height: 340px;
+  /* Remove width property from here as it will be set by specific box classes */
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire card area without distortion */
+  display: block;
+}
+
+.card-content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* A semi-transparent overlay to make text readable */
+  color: white;
+  padding: 1.5rem;
+  box-sizing: border-box; /* Ensures padding doesn't affect the element's width */
+  
+  /* Initial state: The overlay is completely off-screen to the left */
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in-out; /* Smooth transition for the slide effect */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Aligns content to the bottom of the card */
+}
+
+/* On hover, slide the overlay into view */
+.process-card:hover .card-content-overlay {
+  transform: translateX(0);
+}
+
+/* --- Box-specific widths (KEEP YOUR EXISTING STYLES) --- */
+.box-1 { width: 25%; }
+.box-2 { width: 25%; }
+.box-6 { width: 25%; }
+.box-5 { width: 25%; }
+.box-3 { width: 50%; }
+.box-4 { width: 50%; }
+
+/* --- Media Queries (KEEP YOUR EXISTING MEDIA QUERIES) --- */
+@media (max-width: 767px) {
+  .one, .two {
+    flex-direction: column;
+  }
+  .process-card {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .box-1, .box-2, .box-3, .box-4, .box-5, .box-6 {
+    width: 100%;
+  }
+}
+
+
+/* --- NEW SECTION STYLES --- */
+
+/* General Section Styles (for consistency with your dark theme) */
+.dark-theme {
+  background-color: #000; /* Black background */
+  color: white; /* White text */
+  padding: 6rem 1.5rem; /* Consistent padding */
+}
+
+.section-title {
+  font-size: 2.5rem; /* Larger title */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: #e5e7eb; /* Light gray for body text */
+  line-height: 1.6;
+  max-width: 48rem; /* Max width for readability */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.margin-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* About Section (Image 1 Adaptation) */
+.about-section {
+  padding: 8rem 1.5rem; /* Adjust padding for visual separation */
+}
+
+.about-content {
+  max-width: 90rem; /* Same as your nav/feature grid */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Stack vertically on small screens */
+  gap: 3rem;
+  align-items: center; /* Center items when stacked */
+}
+
+@media (min-width: 1024px) { /* Desktop layout for about section */
+  .about-content {
+    flex-direction: row; /* Side-by-side on desktop */
+    justify-content: space-between;
+  }
+  .about-text {
+    flex: 1; /* Takes equal space */
+    padding-right: 2rem; /* Spacing between text and image */
+  }
+  .about-image-container {
+    flex: 1; /* Takes equal space */
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+  }
+}
+
+.about-list {
+  list-style: none; /* Remove default bullets */
+  padding: 0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.about-list li {
+  position: relative;
+  padding-left: 1.75rem; /* Space for custom bullet */
+  margin-bottom: 0.75rem;
+  color: #a0a0a0;
+}
+
+.about-list li::before {
+  content: '✔'; /* Custom checkmark bullet */
+  position: absolute;
+  left: 0;
+  color: #ffffff; /* Pink checkmark */
+  font-weight: bold;
+}
+
+.about-image-container {
+  max-width: 100%; /* Ensure image container fits */
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+/* Work Section (Image 2 Adaptation) */
+.work-section {
+  padding: 8rem 1.5rem;
+}
+
+.work-content {
+  max-width: 90rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Stack vertically on small screens */
+  gap: 3rem;
+  align-items: center; /* Center items when stacked */
+}
+
+@media (min-width: 1024px) { /* Desktop layout for work section */
+  .work-content {
+    flex-direction: row; /* Side-by-side on desktop */
+    justify-content: space-between;
+  }
+  .work-image-container {
+    flex: 1;
+    padding-right: 2rem;
+    display: flex;
+    justify-content: flex-start; /* Align image to the left */
+  }
+  .work-text {
+    flex: 1;
+  }
+}
+
+.work-image-container {
+  max-width: 100%;
+}
+
+.work-image {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Our Process Section (Image 3 Adaptation) */
+.our-process-section {
+  padding: 8rem 1.5rem;
+}
+
+.process-container {
+  max-width: 90rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.process-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 1 column on mobile */
+  gap: 2rem;
+ 
+  margin-top: 4rem;
+}
+
+@media (min-width: 768px) { /* Tablet: 2 columns */
+  .process-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) { /* Desktop: 4 columns */
+  .process-steps-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.process-step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: transparent; /* Slightly lighter dark background */
+  border: 1px solid #2d2e32;
+}
+
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #41414125; /* Pink background for icon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.icon-circle i {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.process-step-item h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: white;
+}
+
+.process-step-item p {
+  font-size: 0.95rem;
+  color: #a0a0a0;
+  line-height: 1.5;
+}
+
+/* FAQ Section (Image 4 Adaptation) */
+.faq-section {
+  padding: 8rem 1.5rem;
+}
+
+.faq-container {
+  max-width: 90rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Stack on small screens */
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) { /* Desktop layout */
+  .faq-container {
+    flex-direction: row; /* Side-by-side */
+    justify-content: space-between;
+  }
+  .faq-illustration-container {
+    flex: 1;
+    padding-right: 2rem;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .faq-accordion-wrapper {
+    flex: 1;
+    padding-left: 2rem;
+  }
+}
+
+.faq-illustration-container {
+  max-width: 100%;
+}
+
+.faq-illustration {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.faq-accordion-wrapper .section-title {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Accordion Styles */
+.accordion-item {
+  background-color: #1a1a1a; /* Lighter dark background */
+  border: 1px solid #2d2e32;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  overflow: hidden; /* Ensures content slides in/out smoothly */
+}
+
+.accordion-header {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  width: 100%;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: #2d2e32; /* Slightly darker on hover */
+}
+
+.accordion-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(45deg); /* Rotate plus icon to X */
+}
+
+.accordion-content {
+  background-color: #1a1a1a;
+  padding: 0 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Smooth slide effect */
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 150px; /* Adjust based on max content height */
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+.accordion-content p {
+  color: #a0a0a0;
+  line-height: 1.6;
+}
+/* --- CSS for the 'Our Process' Section Background Image --- */
+
+.process-container {
+  max-width: 90rem;
+  margin: 0 auto;
+  text-align: center;
+  position: relative; /* Essential for positioning the overlay */
+  background-size: cover; /* Ensures the image covers the container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat;
+  padding: 4rem 1.5rem; /* Add padding to contain the content */
+  border-radius: 0.5rem; /* Match other design elements */
+}
+
+.process-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+  z-index: 1; /* Place it on top of the image */
+  border-radius: 0.5rem; /* Match container border-radius */
+}
+
+.process-container h2,
+.process-container .title-underline,
+.process-steps-grid {
+  position: relative;
+  z-index: 2; /* Bring content to the front, above the overlay */
+}
+
+.process-step-item {
+  /* ... your existing styles ... */
+  background-color: rgba(26, 26, 26, 0.7); /* Adjust the background to be slightly transparent */
+  backdrop-filter: blur(5px); /* Optional: add a blur effect */
+}

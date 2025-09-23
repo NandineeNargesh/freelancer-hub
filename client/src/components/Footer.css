@@ -1,0 +1,122 @@
+/* client/src/components/Footer.css */
+
+.main-footer {
+    background-color: #000;
+    color: white;
+}
+
+.footer-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 1.5rem;
+    background-color: #161619;
+}
+
+.footer-cta-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.footer-cta-button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-cta-button:hover {
+    background-color: white;
+    color: #000;
+}
+
+/* Footer Main Content */
+.footer-main-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    padding: 4rem 1.5rem;
+    max-width: 90rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .footer-main-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-main-content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.footer-column h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-column p,
+.footer-column a {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    color: #46484c;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 0.75rem;
+    font-size: 1.25rem;
+    color: #a0a0a0;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: white;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem;
+    border-top: 1px solid #1c1c1d;
+    background-color: #0a0a0a;
+}
+
+.footer-bottom-bar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom-bar p {
+    color: #a0a0a0;
+    font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+    .footer-bottom-bar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}

@@ -1,0 +1,66 @@
+/* client/src/pages/InvoicesPage.css */
+
+.invoices-page-container {
+    padding: 2rem;
+}
+
+.invoices-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.invoices-header h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.new-invoice-btn {
+    background-color: #46484c;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.new-invoice-btn:hover {
+    background-color: #555454;
+}
+
+/* Table Styling */
+.invoices-table-container {
+    overflow-x: auto;
+    background-color: #1a1a1a;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.invoices-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.invoices-table-container th,
+.invoices-table-container td {
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 1px solid #2d2e32;
+}
+
+.invoices-table-container th {
+    font-size: 0.875rem;
+    color: #a0a0a0;
+    text-transform: uppercase;
+}
+
+.invoices-table-container td {
+    font-size: 1rem;
+}
+
+.invoices-table-container tbody tr:hover {
+    background-color: #2d2e32;
+}

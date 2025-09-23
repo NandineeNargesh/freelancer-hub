@@ -1,0 +1,32 @@
+/* client/src/pages/SupportPage.css */
+
+.support-page-container {
+  padding: 2rem;
+}
+
+.support-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.support-description {
+  color: #a0a0a0;
+  margin-bottom: 2rem;
+}
+
+.support-contact-form {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.placeholder-form {
+  background-color: #2d2e32;
+  height: 300px;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a0a0a0;
+}

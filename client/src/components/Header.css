@@ -1,0 +1,75 @@
+/* client/src/components/Header.css */
+
+.main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.main-nav {
+  /* Use a CSS variable for max-width for consistency */
+  max-width: 90rem; /* 1440px */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5rem 1.5rem; /* 24px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  color: white;
+  font-size: 2rem; /* 32px */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: none; /* Hidden on mobile by default */
+}
+
+/* Use a media query to show links on larger screens (md breakpoint is 768px) */
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* 32px */
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #8c9097; /* pink-500 */
+  }
+}
+
+.nav-cta {
+  display: none; /* Hidden on mobile by default */
+}
+
+@media (min-width: 768px) {
+  .nav-cta {
+    display: block;
+  }
+  
+  .nav-cta a {
+    background-color: #46484c; /* pink-500 */
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem; /* 8px 24px */
+    border-radius: 9999px;
+    text-decoration: none;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-cta a:hover {
+    background-color: #717272; /* pink-600 */
+  }
+}
